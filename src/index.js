@@ -6,8 +6,6 @@ const route = require('./routes');
 const session = require('express-session');
 
 const app = express();
-const port = 3000;
-
 
 app.use(express.static('./src/public'));
 app.use(bodyParser.json()); 
@@ -35,6 +33,6 @@ app.set('views', './src/resources/views');
 
 route(app);
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+app.listen(process.env.PORT, () => {
+  console.log(`Example app listening`)
 })
